@@ -161,8 +161,6 @@ exports.activate = async ({ publish }) => {
         /* a failed tick keeps the previous published snapshot */
       }
     }, TICK_MS);
-    // Never hold the utility process open for a glance readout.
-    if (typeof timer.unref === 'function') timer.unref();
   }
 
   function stop() {
@@ -171,6 +169,13 @@ exports.activate = async ({ publish }) => {
       timer = null;
     }
   }
+
+  // Sampling starts with activation, not with the first `call('snapshot')`:
+  // the dock views only subscribe, so a backend that waited for a call would
+  // never publish, and an idle utility process exits (code 0) once its event
+  // loop drains. The ref'd interval is therefore also what keeps the process
+  // alive; the host stops it explicitly through `dispose` on `stop`.
+  start();
 
   return {
     async call(method) {
