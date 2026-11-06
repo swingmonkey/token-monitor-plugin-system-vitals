@@ -2,24 +2,28 @@
    Colours come from the host theme tokens with safe fallbacks, so the rings
    match the quota cells they sit between in every theme. */
 
-/* ---- Compact rail cell --------------------------------------------------- */
+/* ---- Compact rail cell ---------------------------------------------------
+   The host sizes plugin cells like its usage readouts, not like the quota
+   cells: a 56px slot (48px when the rail is compressed) with a 3px gap
+   (dock.css .edge-dock-cell-plugin, controller.js cellKinds()). Everything
+   below has to fit that slot — a 42px ring over a 12px value with a 7px gap
+   is 61px and would spill into the 2px cell gap. */
 
 .sv-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Matches the host cell's ring-to-value gap (dock.css .edge-dock-cell). */
-  gap: 7px;
+  /* Matches the host plugin cell's ring-to-value gap. */
+  gap: 3px;
   width: 100%;
-  height: 100%;
 }
 .sv-cell.is-idle .sv-value { color: var(--muted, #999); }
 
 .sv-ring {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
 }
@@ -44,7 +48,7 @@
   transition: stroke-dashoffset 420ms cubic-bezier(0.2, 0.8, 0.2, 1), stroke 180ms ease;
 }
 .sv-ring-label {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.02em;
@@ -59,6 +63,15 @@
   color: var(--text, inherit);
   white-space: nowrap;
 }
+
+/* Compressed density: the rail shrinks its rings when the cells cannot all fit
+   at full height (dock.css .edge-dock-rail.is-compact). The plugin stylesheet
+   is linked into the same page, so it follows that switch instead of keeping
+   full-size rings in a 48px slot. */
+.edge-dock-rail.is-compact .sv-cell { gap: 2px; }
+.edge-dock-rail.is-compact .sv-ring { width: 30px; height: 30px; }
+.edge-dock-rail.is-compact .sv-ring-label { font-size: 8px; }
+.edge-dock-rail.is-compact .sv-value { font-size: 11px; }
 
 /* ---- Full hover card ------------------------------------------------------ */
 

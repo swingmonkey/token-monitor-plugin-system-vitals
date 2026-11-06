@@ -156,11 +156,11 @@ if ($entry) {
 
 ### 1. 下载
 
-当前版本：`system-vitals-1.0.1.tmplugin`。
+当前版本：`system-vitals-1.0.2.tmplugin`。
 
 - 最新 Release：<https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/latest>
-- 固定版本直链：<https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/download/v1.0.1/system-vitals-1.0.1.tmplugin>
-- 校验文件：<https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/download/v1.0.1/SHA256SUMS>
+- 固定版本直链：<https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/download/v1.0.2/system-vitals-1.0.2.tmplugin>
+- 校验文件：<https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/download/v1.0.2/SHA256SUMS>
 
 命令行（macOS / Linux，使用 `gh`）：
 
@@ -307,7 +307,7 @@ Get-Content (Join-Path $root 'plugin-manager\installed.json') -Raw | ConvertFrom
 
 ```json
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "sha256": "<release-sha256>",
   "origin": { "id": "local", "kind": "local" }
 }

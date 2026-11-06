@@ -11,7 +11,7 @@
     "zh-TW": "在邊緣停靠欄以圓環顯示 CPU 與記憶體，懸浮卡片附最近負載曲線。",
     "zh-CN": "在边缘停靠栏以圆环显示 CPU 与内存，悬浮卡片附最近负载曲线。"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "swingmonkey (https://github.com/swingmonkey)",
   "homepage": "https://github.com/swingmonkey/token-monitor-plugin-system-vitals",
   "ui": "ui.mjs",

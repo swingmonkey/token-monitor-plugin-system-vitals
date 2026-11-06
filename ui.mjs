@@ -4,7 +4,10 @@
 // each mount subscribes on its own and repaints in place.
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
-const RING_RADIUS = 17;
+// Same arc geometry as the host's quota rings (dock.js RING_RADIUS): a 4-unit
+// stroke on r=18.5 inside the 42-unit viewBox, so the ring fills its box the
+// same way at whatever display size the cell CSS asks for.
+const RING_RADIUS = 18.5;
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 // Card curve windows over the shared 90-point backend history: CPU moves fast
 // enough to read at one minute, memory pressure at two.
@@ -184,7 +187,9 @@ export function activate(ctx) {
       }
 
       // Compact rail cell: the ring with the metric's name inside and the
-      // percent beneath, matching the host quota cells' 70px rhythm.
+      // percent beneath. The host gives plugin cells a stat-sized slot
+      // (56px, 48px compressed), not the quota cells' 70px, so the ring and
+      // the ring-to-value gap are sized to fit that slot.
       const root = document.createElement('div');
       root.className = 'sv-cell';
       const ring = document.createElement('div');

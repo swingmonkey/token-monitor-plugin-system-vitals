@@ -58,9 +58,9 @@ Token Monitor 本体支持 Linux，但本插件的视图只声明了 Edge Dock�
 
 ### 第 2 步：安装 System vitals
 
-1. 从 [Releases](https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/latest) 下载最新的 `system-vitals-<version>.tmplugin`。当前为 `system-vitals-1.0.1.tmplugin`：
+1. 从 [Releases](https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/latest) 下载最新的 `system-vitals-<version>.tmplugin`。当前为 `system-vitals-1.0.2.tmplugin`：
 
-   <https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/download/v1.0.1/system-vitals-1.0.1.tmplugin>
+   <https://github.com/swingmonkey/token-monitor-plugin-system-vitals/releases/download/v1.0.2/system-vitals-1.0.2.tmplugin>
 
    同一个 Release 还提供 `SHA256SUMS`，可直接对照。
 
@@ -68,12 +68,12 @@ Token Monitor 本体支持 Linux，但本插件的视图只声明了 Edge Dock�
 
    ```bash
    # macOS / Linux
-   shasum -a 256 system-vitals-1.0.1.tmplugin
+   shasum -a 256 system-vitals-1.0.2.tmplugin
    ```
 
    ```powershell
    # Windows PowerShell
-   Get-FileHash .\system-vitals-1.0.1.tmplugin -Algorithm SHA256
+   Get-FileHash .\system-vitals-1.0.2.tmplugin -Algorithm SHA256
    ```
 
    当前版本的 SHA-256 以 Release 资产 digest 或随附的 `SHA256SUMS` 为准；比较时忽略 `sha256:` 前缀和大小写。

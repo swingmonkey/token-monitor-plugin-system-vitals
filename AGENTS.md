@@ -201,7 +201,7 @@ gh release view --repo swingmonkey/token-monitor-plugin-system-vitals \
   --json assets --jq '.assets[] | select(.name|endswith(".tmplugin")) | "\(.name) \(.digest)"'
 ```
 
-Compare the local hash with the release asset `digest`, or download the `SHA256SUMS` asset from the same release. `v1.0.1` is the current release.
+Compare the local hash with the release asset `digest`, or download the `SHA256SUMS` asset from the same release. `v1.0.2` is the current release.
 
 If `gh` is unavailable:
 
